@@ -28,7 +28,7 @@ describe('GalleryItemComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('shouldset correct img values', () => {
+  it('should set correct img values', () => {
     expect(component.img.albumId).toEqual(1);
     expect(component.img.id).toEqual(1);
     expect(component.img.title).toEqual(

@@ -1,0 +1,40 @@
+<ng-template #viewImageModal let-modal>
+  <div class="modal-header disable-select">
+    <h4 class="modal-title" id="modal-basic-title">{{ imageTitle }}</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img id="largeImg" class="main-img disable-select" [src]="imageURL" />
+  </div>
+</ng-template>
+
+
+
+<div class="flexbox">
+  <app-gallery-item
+    class="column"
+    *ngFor="
+      let img of imgs
+        | paginate
+          : { itemsPerPage: tableSize, currentPage: page, totalItems: count }
+    "
+    [img]="img"
+    (sendViewLargeImageEvent)="viewLargeImage(img)"
+  >
+  </app-gallery-item>
+</div>
+
+<nav class="nav">
+  <div [ngClass]="{'nav-modalVisible' : modalVisible}"><!-- used to prevent pagination component from moving while modal is visible-->
+    <pagination-controls
+      (pageChange)="onTableDataChange($event)"
+    ></pagination-controls>
+  </div>
+</nav>

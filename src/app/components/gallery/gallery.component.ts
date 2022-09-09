@@ -14,7 +14,6 @@ export class GalleryComponent implements OnInit {
   //view large Image variables
   imageTitle = '';
   imageURL = '';
-  viewerOpen = false;
   modalVisible = false;
 
   //pagination variables
@@ -32,17 +31,16 @@ export class GalleryComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.imgServerService.getImgs().subscribe((img) => (this.imgs = img));//refresh images array from ImgServerService
+    this.imgServerService.getImgs().subscribe((img) => (this.imgs = img)); //refresh images array from ImgServerService
   }
 
   onTableDataChange(event: any) {
     this.page = event;
-    this.imgServerService.getImgs().subscribe((img) => (this.imgs = img));//refresh images array from ImgServerService
+    this.imgServerService.getImgs().subscribe((img) => (this.imgs = img)); //refresh images array from ImgServerService
   }
 
   @ViewChild('viewImageModal') viewImageModal: TemplateRef<any>; // Note: TemplateRef
 
-  
   viewLargeImage(img: Img) {
     this.imageTitle = img.title;
     this.imageURL = img.url;

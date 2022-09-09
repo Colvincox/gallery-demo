@@ -13,7 +13,7 @@
   justify-content: center;
 }
 .nav-modalVisible {
-    margin: 0 0px 0px -17px; /*TRBL*/
+    margin: 0 0 0 -17px; /*TRBL*/
 }
 /*-----*/
 .flexbox {

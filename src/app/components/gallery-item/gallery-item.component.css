@@ -3,7 +3,7 @@
   border-radius: 5px;
   height: 100%;
   object-fit: cover;
-  margin: 0 0 -0px 0; /* fix for overlay bottom overshoot */
+  margin: 0 0 0 0;
 }
 
 @media only screen and (min-width: 768px) {

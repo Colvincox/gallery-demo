@@ -30,9 +30,8 @@ describe('GalleryComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
-    //component.page
   });
   it('should call viewLargeImage() and set correct values', () => {
     let img: Img = {

@@ -26,9 +26,15 @@ describe('ImgServerService', () => {
     service.getImgs().subscribe((result) => {
       expect(result).toBeTruthy(); //not null
       expect(result.length).toEqual(2); //must have 2 elements
+      expect(result[0].id).toEqual(1);
+      expect(result[0].title).toEqual(
+        'accusamus beatae ad facilis cum similique qui sunt'
+      );
       expect(result[0].thumbnailUrl).toEqual(
         'https://via.placeholder.com/150/92c952'
       );
+      expect(result[1].id).toEqual(2);
+      expect(result[1].title).toEqual('reprehenderit est deserunt velit ipsam');
       expect(result[1].thumbnailUrl).toEqual(
         'https://via.placeholder.com/150/771796'
       );

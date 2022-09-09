@@ -25,7 +25,7 @@ describe('GalleryItemComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
   });
   it('should set correct img values', () => {
